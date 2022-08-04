@@ -48,8 +48,9 @@ class TitleState extends MusicBeatState
 	{
 		
 		FlxG.fullscreen = FlxG.save.data.fullscreen;
+		
 		#if polymod
-		polymod.Polymod.init({modRoot: "mods", dirs: ['introMod']});
+	//	polymod.Polymod.init({modRoot: "mods", dirs: ['introMod']});
 		#end
 
 		PlayerSettings.init();
@@ -274,7 +275,7 @@ class TitleState extends MusicBeatState
 
 		var pressedEnter:Bool = FlxG.keys.justPressed.ENTER;
 
-		#if mobile
+		#if android
 		for (touch in FlxG.touches.list)
 		{
 			if (touch.justPressed)
