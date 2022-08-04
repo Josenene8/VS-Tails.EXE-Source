@@ -65,16 +65,14 @@ class Main extends Sprite
 			gameHeight = Math.ceil(stageHeight / zoom);
 		}
 
-		#if !debug
-		initialState = TitleState;
-		#end
+		
 
 		addChild(new FlxGame(gameWidth, gameHeight, initialState, zoom, framerate, framerate, skipSplash, startFullscreen));
 		
 		if(FlxG.save.data.framerateDraw >= 60 && FlxG.save.data.framerateDraw != null)
 			FlxG.drawFramerate = FlxG.save.data.framerateDraw;
 		
-		#if !mobile
+		
 		
 		fpsCounter = new FPS(10, 3, 0xFFFFFF);
 		addChild(fpsCounter);
@@ -83,7 +81,7 @@ class Main extends Sprite
 		addChild(memoryCounter);
 		toggleMem(FlxG.save.data.mem);
 
-		#end
+		
 
 
 	}
